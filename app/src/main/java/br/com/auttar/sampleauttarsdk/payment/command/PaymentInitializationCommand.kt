@@ -11,4 +11,3 @@ class PaymentInitializationCommand : PaymentCommand {
         auttarSDK.paymentTransaction(InitializeData(TypeInitializeTransaction.CARGA_TABELAS_FORCADA))
     }
 }
-sssssssss

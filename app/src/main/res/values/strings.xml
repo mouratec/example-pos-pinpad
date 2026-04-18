@@ -1,0 +1,126 @@
+<resources>
+    <string name="app_name">AuttarSDK</string>
+    <string name="action_settings">Settings</string>
+    <string name="terminal">Terminal: %s</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="deseja_cancelar_a_opera_o">Deseja cancelar a operação?</string>
+    <string name="n_o">Não</string>
+    <string name="sim">Sim</string>
+    <string name="cancelar">Cancelar</string>
+    <string name="continuar">Continuar</string>
+    <string name="autentica_o">Autenticação</string>
+    <string name="usu_rio">USUÁRIO</string>
+    <string name="senha">SENHA</string>
+    <string name="cnpj">CNPJ</string>
+    <string name="realizar_login">Realizar login</string>
+    <string name="cr_dito">Crédito</string>
+    <string name="debito">Debito</string>
+    <string name="ok">OK</string>
+    <string name="tv_error_transaction">Transação não efetuada</string>
+    <string name="transa_o_efetuada_com_sucesso">Transação efetuada com sucesso</string>
+
+    <!-- NFC CALIBRATION-->
+    <string name="calibration_nfc">Calibrar NFC</string>
+    <string name="renew_nfc">Realizar nova leitura</string>
+    <string name="card_read_in">Cartão lido em %s</string>
+    <string name="insert_card_in">Coloque o cartão em %s</string>
+    <string name="nfc_does_not_available">NFC não disponível</string>
+    <string name="error_read_nfc_message">Sem mais opções para encontrar NFC</string>
+    <string name="approach_card">Aproxime o cartão</string>
+    <string name="approach_card_again">Valor: R$ %s \nAproxime o cartão novamente</string>
+    <string name="approach_card_in">Aproxime o cartão na posição customizada: %s</string>
+    <string name="calibrate_better_place_is">O melhor local para aproximação é no meio.</string>
+    <string name="calibrate_title_find_local">Encontre o melhor local para aproximação</string>
+    <string name="calibrate_tutorial_message">Fique atento a algumas coisas antes de iniciar o tutorial</string>
+    <string name="calibrate_tutorial_message_warning"><![CDATA[<b>Ainda tem dúvidas? Realize o teste novamente.</b><br>Fique atento a algumas coisas antes de iniciar]]></string>
+    <string name="instruction_nfc_card">1. Tenha em mãos um cartão com NFC.</string>
+    <string name="instruction_local_read">2. Mantenha o cartão parado no local indicado.</string>
+    <string name="instruction_remove_case">3. Remova acessórios ou capinhas do celular para facilitar a leitura do cartão.</string>
+    <string name="init_calibration_button_text">Iniciar leitura</string>
+    <string name="calibrate_again">Calibrar novamente</string>
+    <string name="calibrate_better_place">O melhor local para aproximação é </string>
+    <string name="retry_tutorial">Tente realizar o tutorial novamente.</string>
+    <string name="repeat_calibrate_tutorial">Repetir tutorial</string>
+    <string name="calibrate_fail_or_not_founded"><![CDATA[<b>Não foi possível localizar a posição correta para a leitura do cartão]]></string>
+    <string name="calibrate_read_ok_message"><![CDATA[<b>Antena identificada!]]></string>
+    <string name="conclude">Concluir</string>
+    <string name="calibrate_back_center"><![CDATA[Encoste o cartão <b>na parte de trás e no meio do celular</b>]]></string>
+    <string name="calibrate_back_bottom"><![CDATA[Encoste o cartão na <b>parte de trás inferior do celular</b>]]></string>
+    <string name="calibrate_back_top"><![CDATA[Encoste o cartão na <b>parte de trás superior do celular</b>]]></string>
+    <string name="calibrate_init_flux_guide">Quando o cartão estiver posicionado, clique no botão abaixo para iniciar a leitura.</string>
+    <string name="calibrate">Calibragem</string>
+    <string name="redo_calibrate">Refazer tutorial</string>
+    <string name="calibrate_in_proccess_message">Mantenha o cartão parado até a finalização da leitura.</string>
+    <string name="calibrate_in_proccess_title">Leitura em andamento. Por favor, aguarde…</string>
+    <string name="calibrate_better_position_back_center">na parte de trás e no meio do celular</string>
+    <string name="calibrate_better_position_back_top">na parte de trás e superior do celular</string>
+    <string name="calibrate_better_position_back_bottom">na parte de trás e inferior do celular</string>
+    <string name="calibrate_information_back_middle"><![CDATA[A leitura é feita na parte de <b>trás central do celular</b>]]></string>
+    <string name="calibrate_information_back_top"><![CDATA[A leitura é feita na parte de <b>trás superior do celular</b>]]></string>
+    <string name="calibrate_information_back_bottom"><![CDATA[A leitura é feita na parte de <b>trás inferior do celular</b>]]></string>
+    <string name="cancel">Cancelar</string>
+    <string name="refund">Cancelamento</string>
+    <string name="date">Data</string>
+    <string name="doc_number">Número do Documento</string>
+    <string name="value">Valor</string>
+    <string name="value_refund_to_confirm">Você deseja confirmar o estorno no valor de R$ %s</string>
+    <string name="title_refund">Digite o valor</string>
+    <string name="hint_refund">R$ 0,00</string>
+    <string name="refund_confirmation">Confirmação de estorno</string>
+    <string name="refund_confirm">SIM, CONFIRMAR</string>
+
+    <!-- Success Data-->
+    <string name="nsu_ctf">NSU: %s</string>
+    <string name="authorized_nsu">Authorized NSU: %s</string>
+    <string name="message_action_status">STATUS: %s</string>
+    <string name="amount">VALOR: %s</string>
+    <string name="dateSdk">DATA: %s</string>
+    <string name="transaction_id">Transaction ID: %s</string>
+    <string name="receiver_psp">Receiver PSP: %s</string>
+
+    <!-- Udes in SubMerchant Fragment-->
+    <string name="message_of_return">"Código: %1$d \n\nMensagem: \n%2$s"</string>
+
+    <!-- OTHERS -->
+    <string name="logout">Logout</string>
+    <string name="sub_merchant">Sub comércio</string>
+    <string name="save_merchant">Salvar subcomercio</string>
+    <string name="delete">Deletar</string>
+    <string name="fetch_saved_sub_merchant">Exibir subcomercio salvo</string>
+    <string name="city">Cidade</string>
+    <string name="state">Estado</string>
+    <string name="zipcode">CEP</string>
+    <string name="address">Logradouro</string>
+    <string name="id">ID</string>
+    <string name="phone">Telefone</string>
+    <string name="url">URL</string>
+    <string name="result">Resultado:</string>
+
+    <!-- Contactless Status -->
+    <string name="contact_less_status_begin">Encoste o cartão ou dispositivo\nno celular</string>
+    <string name="contact_less_status_processing">Realizando a leitura...\nNão afaste o cartão</string>
+    <string name="contact_less_status_done">Leitura concluída, afaste o\ncartão ou dispositivo</string>
+    <string name="contact_less_status_error">Erro na leitura, afaste o\ncartão ou dispositivo</string>
+
+    <!-- Query Pix-->
+    <string name="btn_pix">Pix</string>
+    <string name="query_pix">Consulta Pix</string>
+    <string name="tv_title_query_type">Escolha o tipo de consulta</string>
+    <string name="rb_nsu">NSU</string>
+    <string name="pix_radio_data">ReceiverPSP/TransactionID</string>
+    <string name="btn_cancel">Cancelar</string>
+    <string name="btn_next">Avançar</string>
+    <string name="et_hint_nsu">Digite o NSU de 6 dígitos</string>
+    <string name="et_hint_transaction_id">Digite o TransactionID</string>
+    <string name="et_hint_receiver">Digite o ReceiverPSP</string>
+    <string name="toast_nsu_invalid">NSU inválido</string>
+    <string name="toast_transaction_receiver_empty_field">"Preencha todos os campos"</string>
+    <string name="tv_success">Sucesso!</string>
+</resources>

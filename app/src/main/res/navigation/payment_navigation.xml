@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/payment_navigation"
+    app:startDestination="@id/paymentOptionsFragment">
+
+    <action
+        android:id="@+id/action_to_payment_options"
+        app:destination="@+id/paymentOptionsFragment"
+        app:popUpTo="@+id/paymentOptionsFragment"
+        app:popUpToInclusive="true" />
+
+    <action
+        android:id="@+id/action_to_payment_success_payment"
+        app:destination="@+id/paymentSuccessFragment" />
+
+    <action
+        android:id="@+id/action_to_payment_error_payment"
+        app:destination="@+id/paymentErrorFragment" />
+
+    <action
+        android:id="@+id/action_to_payment_client_select_option"
+        app:destination="@+id/paymentClientUserSelectOptionFragment" />
+
+    <action
+        android:id="@+id/action_to_payment_client_user_loading"
+        app:destination="@+id/paymentClientUserLoadingFragment" />
+
+    <action
+        android:id="@+id/action_to_payment_client_user_cancel_operation"
+        app:destination="@+id/paymentClientUserCancelOperationFragment" />
+
+    <action
+        android:id="@+id/action_to_payment_client_user_capture_string"
+        app:destination="@+id/paymentClientUserCaptureStringFragment" />
+
+    <action
+        android:id="@+id/action_to_payment_client_user_capture_value"
+        app:destination="@+id/paymentClientUserCaptureValueFragment" />
+
+    <action
+        android:id="@+id/action_to_payment_client_user_capture_ask_value"
+        app:destination="@+id/paymentClientUserCaptureAskValueFragment" />
+
+    <action
+        android:id="@+id/action_to_payment_client_user_insert_card"
+        app:destination="@+id/paymentClientUserInsertCardFragment" />
+
+    <action
+        android:id="@+id/action_to_payment_client_user_insert_date"
+        app:destination="@+id/paymentClientUserInsertDateFragment" />
+
+    <action
+        android:id="@+id/action_to_pre_calibration"
+        app:destination="@+id/preCalibrationFragment" />
+
+    <action
+        android:id="@+id/action_to_ok_nfc_calibration"
+        app:destination="@+id/okNfcCalibrationFragment" />
+
+    <action
+        android:id="@+id/action_to_refund"
+        app:destination="@id/refundFragment" />
+
+    <action
+        android:id="@+id/action_to_pinpad_config"
+        app:destination="@id/pinpadConfigFragment" />
+
+    <action
+        android:id="@+id/action_to_payment_client_user_insert_pass"
+        app:destination="@+id/paymentClientUserInsertPassFragment" />
+
+    <action
+        android:id="@+id/action_to_payment_client_user_qrcode"
+        app:destination="@+id/paymentClientUserQrCodeFragment" />
+
+    <fragment
+        android:id="@+id/paymentClientUserLoadingFragment"
+        android:name="br.com.auttar.sampleauttarsdk.payment.client.userInterface.PaymentClientUserLoadingFragment"
+        android:label="PaymentClientUserLoadingFragment">
+        <argument
+            android:name="text"
+            android:defaultValue=''
+            app:argType="string" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/paymentClientUserCancelOperationFragment"
+        android:name="br.com.auttar.sampleauttarsdk.payment.client.userInterface.PaymentClientUserCancelOperationFragment"
+        android:label="PaymentClientUserCancelOperationFragment" />
+
+    <fragment
+        android:id="@+id/paymentClientUserCaptureStringFragment"
+        android:name="br.com.auttar.sampleauttarsdk.payment.client.userInterface.PaymentClientUserCaptureStringFragment"
+        android:label="PaymentClientUserCaptureStringFragment">
+        <argument
+            android:name="text"
+            app:argType="string" />
+        <argument
+            android:name="mask"
+            app:argType="string" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/paymentClientUserCaptureValueFragment"
+        android:name="br.com.auttar.sampleauttarsdk.payment.client.userInterface.PaymentClientUserCaptureValueFragment"
+        android:label="PaymentClientUserCaptureValueFragment">
+        <argument
+            android:name="text"
+            app:argType="string" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/paymentClientUserCaptureAskValueFragment"
+        android:name="br.com.auttar.sampleauttarsdk.payment.client.userInterface.PaymentClientUserCaptureAskValueFragment"
+        android:label="PaymentClientUserCaptureAskValueFragment">
+        <argument
+            android:name="text"
+            app:argType="string" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/paymentClientUserInsertCardFragment"
+        android:name="br.com.auttar.sampleauttarsdk.payment.client.userInterface.PaymentClientUserInsertCardFragment"
+        android:label="PaymentClientUserInsertCardFragment">
+        <argument
+            android:name="text"
+            app:argType="string" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/paymentClientUserInsertDateFragment"
+        android:name="br.com.auttar.sampleauttarsdk.payment.client.userInterface.PaymentClientUserInsertDateFragment"
+        android:label="PaymentClientUserInsertDateFragment">
+        <argument
+            android:name="text"
+            app:argType="string" />
+        <argument
+            android:name="hint"
+            app:argType="string" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/paymentClientUserInsertPassFragment"
+        android:name="br.com.auttar.sampleauttarsdk.payment.client.userInterface.PaymentClientUserInsertPassFragment"
+        android:label="PaymentClientUserInsertPassFragment">
+        <argument
+            android:name="text"
+            app:argType="string" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/paymentClientUserSelectOptionFragment"
+        android:name="br.com.auttar.sampleauttarsdk.payment.client.userInterface.PaymentClientUserSelectOptionFragment"
+        android:label="PaymentClientUserSelectOptionFragment">
+        <argument
+            android:name="text"
+            app:argType="string" />
+        <argument
+            android:name="options"
+            app:argType="string[]" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/paymentOptionsFragment"
+        android:name="br.com.auttar.sampleauttarsdk.payment.PaymentOptionsFragment"
+        android:label="PaymentOptionsFragment" />
+
+    <fragment
+        android:id="@+id/paymentSuccessFragment"
+        android:name="br.com.auttar.sampleauttarsdk.payment.PaymentSuccessFragment"
+        android:label="PaymentSuccessFragment">
+        <argument
+            android:name="paymentSuccessData"
+            app:argType="br.com.auttar.sampleauttarsdk.payment.TefResultData" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/paymentErrorFragment"
+        android:name="br.com.auttar.sampleauttarsdk.payment.PaymentErrorFragment"
+        android:label="PaymentErrorFragment">
+        <argument
+            android:name="errorData"
+            app:argType="br.com.auttar.sampleauttarsdk.payment.TefResultData" />
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/AuthenticationFragment"
+        android:name="br.com.auttar.sampleauttarsdk.authentication.AuthenticationFragment"
+        android:label="AuthenticationFragment" />
+
+    <fragment
+        android:id="@+id/refundFragment"
+        android:name="br.com.auttar.sampleauttarsdk.payment.refund.RefundFragment"
+        android:label="RefundFragment" />
+
+    <fragment
+        android:id="@+id/pinpadConfigFragment"
+        android:name="br.com.auttar.sampleauttarsdk.payment.PinpadConfigFragment"
+        android:label="PinpadConfigFragment" />
+
+</navigation>

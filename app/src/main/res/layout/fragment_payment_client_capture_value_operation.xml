@@ -1,0 +1,41 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container_password"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginTop="30dp"
+    android:elevation="20dp"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/textViewInfo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:textAlignment="center"
+        android:textSize="18sp"
+        tools:text="Informe o valor" />
+
+    <EditText
+        android:id="@+id/editTextValue"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginStart="100sp"
+        android:layout_marginEnd="100sp"
+        android:autofillHints="R$ 0,00"
+        android:ems="10"
+        android:inputType="text"
+        android:textAlignment="center"
+        android:textSize="24sp"
+        tools:hint="R$ 0,00"
+        tools:ignore="LabelFor" />
+
+    <include
+        android:id="@+id/keyboard"
+        layout="@layout/content_number_keyboard"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="5dp" />
+
+</LinearLayout>

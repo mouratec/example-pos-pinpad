@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main_navigation"
+    app:startDestination="@id/authenticationFragment">
+
+    <action
+        android:id="@+id/action_to_payment"
+        app:destination="@+id/paymentFragment" />
+
+    <action
+        android:id="@+id/action_logout_to_authentication"
+        app:destination="@id/authenticationFragment" />
+
+    <fragment
+        android:id="@+id/authenticationFragment"
+        android:name="br.com.auttar.sampleauttarsdk.authentication.AuthenticationFragment"
+        android:label="AuthenticationFragment" />
+
+    <fragment
+        android:id="@+id/paymentFragment"
+        android:name="br.com.auttar.sampleauttarsdk.payment.PaymentFragment"
+        android:label="PaymentFragment">
+        <argument
+            android:name="data"
+            android:defaultValue='{}'
+            app:argType="string" />
+
+        <deepLink
+            app:action="android.intent.action.AUTTAR_PROCESS_TRANSACTION"
+            app:mimeType="type/subtype"
+            app:uri="auttar://payment/{data}" />
+    </fragment>
+
+</navigation>

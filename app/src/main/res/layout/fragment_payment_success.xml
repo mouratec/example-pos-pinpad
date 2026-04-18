@@ -1,0 +1,134 @@
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/iv_confirmed"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:src="@drawable/ic_succes"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_success"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/tv_success"
+        android:textAlignment="center"
+        android:textColor="@color/colorSucces"
+        android:textSize="48sp"
+        app:layout_constraintTop_toBottomOf="@id/iv_confirmed" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_display"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:textColor="@color/colorSucces"
+        android:textSize="20sp"
+        app:layout_constraintTop_toBottomOf="@+id/tv_success"
+        tools:text="Execução bem sucedida!" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/tv_display">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:background="@color/yellow_light"
+            android:orientation="vertical"
+            android:paddingBottom="80dp">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_nsu"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:textAlignment="center"
+                android:textColor="@color/colorTextSucces1"
+                android:textSize="18sp"
+                tools:text="NSU: 18934" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_authorized_nsu"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:textAlignment="center"
+                android:textColor="@color/colorTextSucces1"
+                android:textSize="18sp"
+                tools:text="Authorized NSU: 245971" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_message_action"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:textAlignment="center"
+                android:textColor="@color/colorTextSucces2"
+                android:textSize="12sp"
+                tools:text="GETNET PIX" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_amount"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:textColor="@color/colorTextSucces2"
+                android:textSize="12sp"
+                tools:text="R$ 12,00" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_date_sdk"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:textColor="@color/colorTextSucces2"
+                android:textSize="12sp"
+                tools:text="DATA: 01/01/2025" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_transaction_id"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:textColor="@color/colorTextSucces2"
+                android:textSize="12sp"
+                tools:text="Transaction ID: 0003" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_receiver_psp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:textColor="@color/colorTextSucces2"
+                android:textSize="12sp"
+                tools:text="Receiver PSP: 15/07/2025" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_status_pix_query"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:textColor="@color/colorTextSucces2"
+                android:textSize="12sp"
+                tools:text="STATUS: Pago" />
+        </LinearLayout>
+    </ScrollView>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_ok"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:layout_margin="6dp"
+        android:text="@string/ok"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

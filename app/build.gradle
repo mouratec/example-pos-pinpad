@@ -1,0 +1,127 @@
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+    id 'androidx.navigation.safeargs'
+    id 'kotlin-parcelize'
+}
+
+android {
+    namespace = "br.com.auttar.sampleauttarsdk"
+    compileSdk 34
+
+    defaultConfig {
+        applicationId "br.com.auttar.app.demo.homolog.release"
+        minSdk 25
+        targetSdk 34
+        versionCode 5
+        versionName "3.0.2"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        ndk {
+            abiFilters "armeabi-v7a", "arm64-v8a"
+        }
+
+        packagingOptions {
+            jniLibs {
+                useLegacyPackaging = true
+            }
+        }
+
+        signingConfigs {
+            register("config") {
+                keyAlias = "pagonxt"
+                keyPassword = "pagonxt"
+                storeFile = file("../SampleAuttarSdk.jks")
+                storePassword = "pagonxt"
+            }
+        }
+    }
+
+    buildTypes {
+        release {
+            signingConfig signingConfigs.config
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+        debug {
+            signingConfig signingConfigs.config
+            minifyEnabled false
+            debuggable true
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
+        coreLibraryDesugaringEnabled true
+    }
+
+    java {
+        toolchain {
+            languageVersion = JavaLanguageVersion.of(17)
+        }
+    }
+
+    kotlin {
+        jvmToolchain(17)
+    }
+
+    buildFeatures {
+        viewBinding true
+        buildConfig true
+    }
+
+    flavorDimensions.add("typeDevice")
+
+    productFlavors {
+        pos {
+            minSdk 25
+            dimension "typeDevice"
+            isDefault = true
+        }
+        pinpad {
+            minSdk 25
+            dimension "typeDevice"
+            isDefault = false
+        }
+    }
+}
+
+dependencies {
+    implementation "androidx.core:core-ktx:$coreKtx"
+    implementation "androidx.appcompat:appcompat:$appcompat"
+    implementation 'com.google.android.material:material:1.6.1'
+    implementation "androidx.constraintlayout:constraintlayout:$constraintlayout"
+
+    implementation "androidx.navigation:navigation-fragment-ktx:$navigation"
+    implementation "androidx.navigation:navigation-ui-ktx:$navigation"
+    implementation 'com.google.code.gson:gson:2.8.9'
+    implementation 'androidx.security:security-crypto:1.0.0'
+
+    //Koin
+    implementation "io.insert-koin:koin-android:$koin"
+    implementation "io.insert-koin:koin-android-compat:$koin"
+
+    coreLibraryDesugaring("com.android.tools:desugar_jdk_libs_nio:2.1.4")
+
+    // BC TOP
+    implementation "br.com.auttar.mobile:payment-sdk-debug:$auttarSdk"
+
+    posApi "br.com.auttar.mobile:payment-sdk-bc-pos-debug:$auttarSdk"
+    pinpadApi "br.com.auttar.mobile:payment-sdk-bc-pinpad-debug:$auttarSdk"
+
+    testImplementation "junit:junit:$junit"
+    testImplementation "androidx.test.espresso:espresso-core:$espressoCore"
+    testImplementation "org.robolectric:robolectric:$robolectric"
+    testImplementation "io.mockk:mockk:$mockk"
+    testImplementation "io.mockk:mockk-agent-jvm:$mockk"
+    testImplementation "io.insert-koin:koin-test:$koin"
+    testImplementation "io.insert-koin:koin-test-junit4:$koin"
+    testImplementation 'androidx.test.ext:junit:1.1.3'
+    testImplementation 'androidx.test:core:1.4.0'
+    testImplementation 'androidx.arch.core:core-testing:2.1.0'
+    testImplementation "androidx.navigation:navigation-testing:$navigation"
+    testImplementation "org.jetbrains.kotlinx:kotlinx-coroutines-test:1.6.1"
+    debugImplementation "androidx.fragment:fragment-testing:1.4.1"
+}

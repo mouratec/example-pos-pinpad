@@ -64,16 +64,24 @@ class AuthenticationViewModel(
     fun onMonoECAuthenticate(
         user: String, password: String, cnpj: String
     ) {
-        val data = ParameterLoginIntegrationMonoEC(
-            user,
-            password,
-            cnpj,
-            null
-        )
+        viewModelScope.launch {
+            // Aguarda o SDK estar pronto antes de autenticar
+            br.com.auttar.sampleauttarsdk.SampleApplication.isSdkReady.collect { isReady ->
+                if (isReady) {
+                    val data = ParameterLoginIntegrationMonoEC(
+                        user,
+                        password,
+                        cnpj,
+                        null
+                    )
 
-        _loginState.postValue(AuthenticationState.OnLoading)
+                    _loginState.postValue(AuthenticationState.OnLoading)
 
-        auttarSdk.authenticationMonoEC(data, _requestLoginCallback)
+                    auttarSdk.authenticationMonoEC(data, _requestLoginCallback)
+                    return@collect
+                }
+            }
+        }
     }
 
     fun logout() {

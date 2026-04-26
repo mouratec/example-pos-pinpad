@@ -103,14 +103,28 @@ class PaymentViewModel(
     }
 
     fun runInitialization() {
-        if (!isInitialized) {
-            isInitialized = true
-            executePaymentCommand(PaymentInitializationCommand())
+        viewModelScope.launch {
+            // Aguarda o SDK estar pronto (StateFlow do Application)
+            br.com.auttar.sampleauttarsdk.SampleApplication.isSdkReady.collect { isReady ->
+                if (isReady && !isInitialized) {
+                    isInitialized = true
+                    executePaymentCommand(PaymentInitializationCommand())
+                    // Para o collect após a inicialização
+                    return@collect
+                }
+            }
         }
     }
 
     fun executePaymentCommand(command: PaymentCommand) {
-        command.executeCommand()
+        viewModelScope.launch {
+            // Garantia extra: verifica se o SDK está pronto antes de qualquer comando
+            if (br.com.auttar.sampleauttarsdk.SampleApplication.isSdkReady.value) {
+                command.executeCommand()
+            } else {
+                _paymentState.postValue(PaymentState.OnMessage("Aguardando inicialização do SDK..."))
+            }
+        }
     }
 
     fun executeClientCommand(command: ClientCommand) {
